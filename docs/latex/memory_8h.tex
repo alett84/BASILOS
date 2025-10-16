@@ -1,0 +1,68 @@
+\hypertarget{memory_8h}{}\doxysection{/home/alett84/\+Pids/include/memory.h File Reference}
+\label{memory_8h}\index{/home/alett84/Pids/include/memory.h@{/home/alett84/Pids/include/memory.h}}
+
+
+MPX-\/specific dynamic memory functions.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for memory.\+h\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{memory_8h_a7bb253c308c19ed0f00940aaf7f3f3aa}{sys\+\_\+alloc\+\_\+mem}} (size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{memory_8h_a950663d39dbb073c9dff9cf3b5d3392c}{sys\+\_\+free\+\_\+mem}} (void $\ast$ptr)
+\item 
+void \mbox{\hyperlink{memory_8h_a462db3a1d9c70195e513b21680b6a013}{sys\+\_\+set\+\_\+heap\+\_\+functions}} (void $\ast$($\ast$alloc\+\_\+fn)(size\+\_\+t), int($\ast$free\+\_\+fn)(void $\ast$))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+MPX-\/specific dynamic memory functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{memory_8h_a7bb253c308c19ed0f00940aaf7f3f3aa}\label{memory_8h_a7bb253c308c19ed0f00940aaf7f3f3aa}} 
+\index{memory.h@{memory.h}!sys\_alloc\_mem@{sys\_alloc\_mem}}
+\index{sys\_alloc\_mem@{sys\_alloc\_mem}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{sys\_alloc\_mem()}{sys\_alloc\_mem()}}
+{\footnotesize\ttfamily void$\ast$ sys\+\_\+alloc\+\_\+mem (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Allocate dynamic memory. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The amount of memory, in bytes, to allocate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL on error, otherwise the address of the newly allocated memory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{memory_8h_a950663d39dbb073c9dff9cf3b5d3392c}\label{memory_8h_a950663d39dbb073c9dff9cf3b5d3392c}} 
+\index{memory.h@{memory.h}!sys\_free\_mem@{sys\_free\_mem}}
+\index{sys\_free\_mem@{sys\_free\_mem}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{sys\_free\_mem()}{sys\_free\_mem()}}
+{\footnotesize\ttfamily int sys\+\_\+free\+\_\+mem (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+Free dynamic memory. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The address of dynamically allocated memory to free \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero on error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{memory_8h_a462db3a1d9c70195e513b21680b6a013}\label{memory_8h_a462db3a1d9c70195e513b21680b6a013}} 
+\index{memory.h@{memory.h}!sys\_set\_heap\_functions@{sys\_set\_heap\_functions}}
+\index{sys\_set\_heap\_functions@{sys\_set\_heap\_functions}!memory.h@{memory.h}}
+\doxysubsubsection{\texorpdfstring{sys\_set\_heap\_functions()}{sys\_set\_heap\_functions()}}
+{\footnotesize\ttfamily void sys\+\_\+set\+\_\+heap\+\_\+functions (\begin{DoxyParamCaption}\item[{void $\ast$($\ast$)(size\+\_\+t)}]{alloc\+\_\+fn,  }\item[{int($\ast$)(void $\ast$)}]{free\+\_\+fn }\end{DoxyParamCaption})}
+
+Installs user-\/supplied heap management functions. 
+\begin{DoxyParams}{Parameters}
+{\em alloc\+\_\+fn} & A function that dynamically allocates memory \\
+\hline
+{\em free\+\_\+fn} & A function that frees dynamically allocated memory \\
+\hline
+\end{DoxyParams}

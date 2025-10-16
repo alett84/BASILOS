@@ -1,0 +1,73 @@
+\hypertarget{interrupts_8h}{}\doxysection{/home/alett84/\+Pids/include/mpx/interrupts.h File Reference}
+\label{interrupts_8h}\index{/home/alett84/Pids/include/mpx/interrupts.h@{/home/alett84/Pids/include/mpx/interrupts.h}}
+
+
+Kernel functions related to software and hardware interrupts.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{interrupts_8h_a68c330e94fe121eba993e5a5973c3162}{cli}}()~\+\_\+\+\_\+asm\+\_\+\+\_\+ volatile (\char`\"{}cli\char`\"{})
+\item 
+\#define \mbox{\hyperlink{interrupts_8h_ac5d15f274bc9b1e96230f3d3c60fd1f8}{sti}}()~\+\_\+\+\_\+asm\+\_\+\+\_\+ volatile (\char`\"{}sti\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interrupts_8h_a4f77024da33605c6d49c12845b5dcbb6}{irq\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{interrupts_8h_afc70164c232cee70941b16e3f2ca029a}{pic\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{interrupts_8h_a164d38a0163ec2c36993b803b8c7fdcb}{idt\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{interrupts_8h_a152d9a7b01e655898a365af9b0134932}{idt\+\_\+install}} (int vector, void($\ast$handler)(void $\ast$))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kernel functions related to software and hardware interrupts. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{interrupts_8h_a68c330e94fe121eba993e5a5973c3162}\label{interrupts_8h_a68c330e94fe121eba993e5a5973c3162}} 
+\index{interrupts.h@{interrupts.h}!cli@{cli}}
+\index{cli@{cli}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{cli}{cli}}
+{\footnotesize\ttfamily \#define cli(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+asm\+\_\+\+\_\+ volatile (\char`\"{}cli\char`\"{})}
+
+Disable interrupts \mbox{\Hypertarget{interrupts_8h_ac5d15f274bc9b1e96230f3d3c60fd1f8}\label{interrupts_8h_ac5d15f274bc9b1e96230f3d3c60fd1f8}} 
+\index{interrupts.h@{interrupts.h}!sti@{sti}}
+\index{sti@{sti}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{sti}{sti}}
+{\footnotesize\ttfamily \#define sti(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\+\_\+\+\_\+asm\+\_\+\+\_\+ volatile (\char`\"{}sti\char`\"{})}
+
+Enable interrupts 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interrupts_8h_a164d38a0163ec2c36993b803b8c7fdcb}\label{interrupts_8h_a164d38a0163ec2c36993b803b8c7fdcb}} 
+\index{interrupts.h@{interrupts.h}!idt\_init@{idt\_init}}
+\index{idt\_init@{idt\_init}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{idt\_init()}{idt\_init()}}
+{\footnotesize\ttfamily void idt\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Creates and installs the Interrupt Descriptor Table. \mbox{\Hypertarget{interrupts_8h_a152d9a7b01e655898a365af9b0134932}\label{interrupts_8h_a152d9a7b01e655898a365af9b0134932}} 
+\index{interrupts.h@{interrupts.h}!idt\_install@{idt\_install}}
+\index{idt\_install@{idt\_install}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{idt\_install()}{idt\_install()}}
+{\footnotesize\ttfamily void idt\+\_\+install (\begin{DoxyParamCaption}\item[{int}]{vector,  }\item[{void($\ast$)(void $\ast$)}]{handler }\end{DoxyParamCaption})}
+
+Installs an interrupt handler \mbox{\Hypertarget{interrupts_8h_a4f77024da33605c6d49c12845b5dcbb6}\label{interrupts_8h_a4f77024da33605c6d49c12845b5dcbb6}} 
+\index{interrupts.h@{interrupts.h}!irq\_init@{irq\_init}}
+\index{irq\_init@{irq\_init}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{irq\_init()}{irq\_init()}}
+{\footnotesize\ttfamily void irq\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Installs the initial interrupt handlers for the first 32 IRQ lines. Most do a panic for now. \mbox{\Hypertarget{interrupts_8h_afc70164c232cee70941b16e3f2ca029a}\label{interrupts_8h_afc70164c232cee70941b16e3f2ca029a}} 
+\index{interrupts.h@{interrupts.h}!pic\_init@{pic\_init}}
+\index{pic\_init@{pic\_init}!interrupts.h@{interrupts.h}}
+\doxysubsubsection{\texorpdfstring{pic\_init()}{pic\_init()}}
+{\footnotesize\ttfamily void pic\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializes the programmable interrupt controllers and performs the necessary remapping of IRQs. Leaves interrupts turned off. 

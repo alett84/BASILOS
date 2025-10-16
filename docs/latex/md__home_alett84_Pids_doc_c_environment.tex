@@ -1,0 +1,47 @@
+MPX is implemented in a {\itshape Freestanding C} environment. Importantly, this means that you do {\itshape not} have access to the bulk of the standard library. What you do have access to is primarily constants and type definitions specific to the architecture. Specifically, the Freestanding implementation gives you\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily $<$float.\+h$>$} ~\newline
+ Constants relating to how floating-\/point math works
+\item {\ttfamily $<$iso646.\+h$>$} ~\newline
+ Alternate spellings for some operators (e.\+g. {\ttfamily and} for {\ttfamily \&\&})
+\item {\ttfamily $<$limits.\+h$>$} ~\newline
+ Constants describing the limits of primitive types (e.\+g. {\ttfamily INT\+\_\+\+MAX})
+\item {\ttfamily $<$stdalign.\+h$>$} ~\newline
+ Macros for determining the memory alignment of types
+\item {\ttfamily $<$stdarg.\+h$>$} ~\newline
+ Macros for implementing variadic functions (similar to how {\ttfamily printf()} works)
+\item {\ttfamily $<$stdbool.\+h$>$} ~\newline
+ Definitions for {\ttfamily true} and {\ttfamily false}
+\item {\ttfamily $<$stddef.\+h$>$} ~\newline
+ Basic constants and types like {\ttfamily NULL} and {\ttfamily size\+\_\+t}
+\item {\ttfamily $<$stdint.\+h$>$} ~\newline
+ Fixed-\/width integer type definitions (e.\+g. {\ttfamily uint32\+\_\+t})
+\item {\ttfamily $<$stdnoreturn.\+h$>$} ~\newline
+ Allows defining a function that never returns
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_c_environment_autotoc_md1}{}\doxysection{Limited Library}\label{md__home_alett84_Pids_doc_c_environment_autotoc_md1}
+MPX does provide some functions from the standard library for your use. You are free to implement additional functions to aid in the development of MPX (suggestions include {\ttfamily sprintf()} (or at least something to convert from an integer to a NUL-\/terminated string) and {\ttfamily strcpy()}).\hypertarget{md__home_alett84_Pids_doc_c_environment_autotoc_md2}{}\doxysubsection{$<$tt$>$$<$stdlib.\+h$>$$<$/tt$>$}\label{md__home_alett84_Pids_doc_c_environment_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\ttfamily int \mbox{\hyperlink{stdlib_8h_a30670a60464f77af17dfb353353d6df8}{atoi(const char $\ast$s)}}} ~\newline
+ Converts the NUL-\/terminated string {\ttfamily s} to an integer
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_c_environment_autotoc_md3}{}\doxysubsection{$<$tt$>$$<$ctype.\+h$>$$<$/tt$>$}\label{md__home_alett84_Pids_doc_c_environment_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\ttfamily int \mbox{\hyperlink{ctype_8h_a56be4166e4673843042a548a7f513dbc}{isspace(int c)}}} ~\newline
+ Determines whether the character {\ttfamily c} is a white-\/space character
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_c_environment_autotoc_md4}{}\doxysubsection{$<$tt$>$$<$string.\+h$>$$<$/tt$>$}\label{md__home_alett84_Pids_doc_c_environment_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\ttfamily void $\ast$memcpy(void $\ast$dst, void $\ast$src, size\+\_\+t n)} ~\newline
+ Copies {\ttfamily n} bytes of memory from {\ttfamily src} to {\ttfamily dst}
+\item {\ttfamily void $\ast$memset(void $\ast$ptr, char val, size\+\_\+t n)} ~\newline
+ Fills {\ttfamily n} bytes of memory starting at {\ttfamily ptr} with the value {\ttfamily val}
+\item {\ttfamily int \mbox{\hyperlink{string_8h_a11bd144d7d44914099a3aeddf1c8567d}{strcmp(const char $\ast$s1, const char $\ast$s2)}}} ~\newline
+ Compares two strings
+\item {\ttfamily size\+\_\+t \mbox{\hyperlink{string_8h_aa383452fe445bfae989358c9d7d96f4f}{strlen(const char $\ast$s)}}} ~\newline
+ Count the number of characters in the string {\ttfamily s}
+\item {\ttfamily char $\ast$strtok(char $\ast$s, const char $\ast$delimiters)} ~\newline
+ Split the string {\ttfamily s} into tokens based on {\ttfamily delimiters} 
+\end{DoxyItemize}

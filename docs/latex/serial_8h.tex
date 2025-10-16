@@ -1,0 +1,150 @@
+\hypertarget{serial_8h}{}\doxysection{/home/alett84/\+Pids/include/mpx/serial.h File Reference}
+\label{serial_8h}\index{/home/alett84/Pids/include/mpx/serial.h@{/home/alett84/Pids/include/mpx/serial.h}}
+
+
+Kernel functions and constants for handling serial I/O.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$mpx/device.\+h$>$}\newline
+Include dependency graph for serial.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{serial_8h_a361f5c696ea1c92c5f6bcc10579dc71c}\label{serial_8h_a361f5c696ea1c92c5f6bcc10579dc71c}} 
+\#define {\bfseries DATA\+\_\+\+AVAILABLE}~(\mbox{\hyperlink{io_8h_ad6488a48837d179b1833e2f48dac9665}{inb}}(dev + LSR) \& 1) == 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{serial_8h_a59d1db7894c07b31b520be0ae0a32896}{serial\+\_\+init}} (device dev)
+\item 
+int \mbox{\hyperlink{serial_8h_a7e049d65b09969503d73dd367775d0f6}{serial\+\_\+out}} (device dev, const char $\ast$buffer, size\+\_\+t len)
+\item 
+int \mbox{\hyperlink{serial_8h_a1e9204d031fa281b2983b1e97859c179}{serial\+\_\+poll}} (device dev, char $\ast$buffer, size\+\_\+t len)
+\item 
+int \mbox{\hyperlink{serial_8h_aebb982a0a1fb3d3125934d8b52403a0c}{serial\+\_\+out\+\_\+post}} (device dev, const char $\ast$buffer, size\+\_\+t len, const unsigned int extra\+\_\+whitespace)
+\item 
+int \mbox{\hyperlink{serial_8h_a7232d38b24b7fde160e0498b40e267a1}{serial\+\_\+buffer\+\_\+backspace}} (device dev, char $\ast$buffer, unsigned int $\ast$const pos\+\_\+ptr, unsigned int $\ast$const buffer\+\_\+filled\+\_\+ptr)
+\item 
+int \mbox{\hyperlink{serial_8h_a9df181b3c0935211c582e4f55a2031f8}{serial\+\_\+buffer\+\_\+delete}} (device dev, char $\ast$buffer, unsigned int $\ast$const pos\+\_\+ptr, unsigned int $\ast$const buffer\+\_\+filled\+\_\+ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kernel functions and constants for handling serial I/O. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{serial_8h_a7232d38b24b7fde160e0498b40e267a1}\label{serial_8h_a7232d38b24b7fde160e0498b40e267a1}} 
+\index{serial.h@{serial.h}!serial\_buffer\_backspace@{serial\_buffer\_backspace}}
+\index{serial\_buffer\_backspace@{serial\_buffer\_backspace}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_buffer\_backspace()}{serial\_buffer\_backspace()}}
+{\footnotesize\ttfamily int serial\+\_\+buffer\+\_\+backspace (\begin{DoxyParamCaption}\item[{device}]{dev,  }\item[{char $\ast$}]{buffer,  }\item[{unsigned int $\ast$const}]{pos\+\_\+ptr,  }\item[{unsigned int $\ast$const}]{buffer\+\_\+filled\+\_\+ptr }\end{DoxyParamCaption})}
+
+Perform a backspace at a position in buffer, echoing the result to the given serial port 
+\begin{DoxyParams}{Parameters}
+{\em device} & The serial port to output to \\
+\hline
+{\em buffer} & The buffer that the backspace is performed in \\
+\hline
+{\em pos\+\_\+ptr} & Pointer to where position in buffer is stored \\
+\hline
+{\em buffer\+\_\+filled\+\_\+ptr} & Pointer to where buffer filled capacity is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if backspace is attempted at beginning of buffer, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{serial_8h_a9df181b3c0935211c582e4f55a2031f8}\label{serial_8h_a9df181b3c0935211c582e4f55a2031f8}} 
+\index{serial.h@{serial.h}!serial\_buffer\_delete@{serial\_buffer\_delete}}
+\index{serial\_buffer\_delete@{serial\_buffer\_delete}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_buffer\_delete()}{serial\_buffer\_delete()}}
+{\footnotesize\ttfamily int serial\+\_\+buffer\+\_\+delete (\begin{DoxyParamCaption}\item[{device}]{dev,  }\item[{char $\ast$}]{buffer,  }\item[{unsigned int $\ast$const}]{pos\+\_\+ptr,  }\item[{unsigned int $\ast$const}]{buffer\+\_\+filled\+\_\+ptr }\end{DoxyParamCaption})}
+
+Perform a delete at a position in buffer, echoing the result to the given serial port 
+\begin{DoxyParams}{Parameters}
+{\em device} & The serial port to output to \\
+\hline
+{\em buffer} & The buffer that the delete is performed in \\
+\hline
+{\em pos\+\_\+ptr} & Pointer to where position in buffer is stored \\
+\hline
+{\em buffer\+\_\+filled\+\_\+ptr} & Pointer to where buffer filled capacity is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if delete is attempted at end of buffer, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{serial_8h_a59d1db7894c07b31b520be0ae0a32896}\label{serial_8h_a59d1db7894c07b31b520be0ae0a32896}} 
+\index{serial.h@{serial.h}!serial\_init@{serial\_init}}
+\index{serial\_init@{serial\_init}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_init()}{serial\_init()}}
+{\footnotesize\ttfamily int serial\+\_\+init (\begin{DoxyParamCaption}\item[{device}]{dev }\end{DoxyParamCaption})}
+
+Initializes devices for user input and output 
+\begin{DoxyParams}{Parameters}
+{\em device} & A serial port to initialize (COM1, COM2, COM3, or COM4) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{serial_8h_a7e049d65b09969503d73dd367775d0f6}\label{serial_8h_a7e049d65b09969503d73dd367775d0f6}} 
+\index{serial.h@{serial.h}!serial\_out@{serial\_out}}
+\index{serial\_out@{serial\_out}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_out()}{serial\_out()}}
+{\footnotesize\ttfamily int serial\+\_\+out (\begin{DoxyParamCaption}\item[{device}]{dev,  }\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Writes a buffer to a serial port 
+\begin{DoxyParams}{Parameters}
+{\em device} & The serial port to output to \\
+\hline
+{\em buffer} & A pointer to an array of characters to output \\
+\hline
+{\em len} & The number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written 
+\end{DoxyReturn}
+\mbox{\Hypertarget{serial_8h_aebb982a0a1fb3d3125934d8b52403a0c}\label{serial_8h_aebb982a0a1fb3d3125934d8b52403a0c}} 
+\index{serial.h@{serial.h}!serial\_out\_post@{serial\_out\_post}}
+\index{serial\_out\_post@{serial\_out\_post}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_out\_post()}{serial\_out\_post()}}
+{\footnotesize\ttfamily int serial\+\_\+out\+\_\+post (\begin{DoxyParamCaption}\item[{device}]{dev,  }\item[{const char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len,  }\item[{const unsigned int}]{extra\+\_\+whitespace }\end{DoxyParamCaption})}
+
+Writes a buffer to a serial port without moving the cursor 
+\begin{DoxyParams}{Parameters}
+{\em device} & The serial port to output to \\
+\hline
+{\em buffer} & A pointer to an array of characters to output \\
+\hline
+{\em len} & The number of bytes to write \\
+\hline
+{\em extra\+\_\+whitespace} & Number of extra spaces written at the end to clear old characters written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written 
+\end{DoxyReturn}
+\mbox{\Hypertarget{serial_8h_a1e9204d031fa281b2983b1e97859c179}\label{serial_8h_a1e9204d031fa281b2983b1e97859c179}} 
+\index{serial.h@{serial.h}!serial\_poll@{serial\_poll}}
+\index{serial\_poll@{serial\_poll}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{serial\_poll()}{serial\_poll()}}
+{\footnotesize\ttfamily int serial\+\_\+poll (\begin{DoxyParamCaption}\item[{device}]{dev,  }\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Reads a string from a serial port 
+\begin{DoxyParams}{Parameters}
+{\em device} & The serial port to read data from \\
+\hline
+{\em buffer} & A buffer to write data into as it is read from the serial port \\
+\hline
+{\em count} & The maximum number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes read on success, a negative number on failure 
+\end{DoxyReturn}

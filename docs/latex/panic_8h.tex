@@ -1,0 +1,34 @@
+\hypertarget{panic_8h}{}\doxysection{/home/alett84/\+Pids/include/mpx/panic.h File Reference}
+\label{panic_8h}\index{/home/alett84/Pids/include/mpx/panic.h@{/home/alett84/Pids/include/mpx/panic.h}}
+
+
+Common system functions and definitions.  
+
+
+{\ttfamily \#include $<$stdnoreturn.\+h$>$}\newline
+Include dependency graph for panic.\+h\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+noreturn \mbox{\hyperlink{panic_8h_aa922a67c2e6f2faab49b9d366ccf60ab}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((no\+\_\+caller\+\_\+saved\+\_\+registers)) void kpanic(const char $\ast$msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common system functions and definitions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{panic_8h_aa922a67c2e6f2faab49b9d366ccf60ab}\label{panic_8h_aa922a67c2e6f2faab49b9d366ccf60ab}} 
+\index{panic.h@{panic.h}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!panic.h@{panic.h}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily noreturn \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(no\+\_\+caller\+\_\+saved\+\_\+registers)}]{ }\end{DoxyParamCaption}) const}
+
+Kernel panic. Prints an error message and halts. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & A message to display before halting \\
+\hline
+\end{DoxyParams}

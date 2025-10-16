@@ -1,0 +1,51 @@
+\hypertarget{structidt__entry}{}\doxysection{idt\+\_\+entry Struct Reference}
+\label{structidt__entry}\index{idt\_entry@{idt\_entry}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structidt__entry_abbde8c373c9f8fc21905210137aa616c}\label{structidt__entry_abbde8c373c9f8fc21905210137aa616c}} 
+uint16\+\_\+t {\bfseries base\+\_\+low}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structidt__entry_a355ab480c740ae4515b90476511a1c5e}{sselect}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structidt__entry_a972966fe18097de8c7462e083f534703}{zero}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structidt__entry_a6815d884869cb156401614bcfa344bea}{flags}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structidt__entry_af9a2fc81ef418bb3028f91966717fe76}{base\+\_\+high}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A single entry in the IDT 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structidt__entry_af9a2fc81ef418bb3028f91966717fe76}\label{structidt__entry_af9a2fc81ef418bb3028f91966717fe76}} 
+\index{idt\_entry@{idt\_entry}!base\_high@{base\_high}}
+\index{base\_high@{base\_high}!idt\_entry@{idt\_entry}}
+\doxysubsubsection{\texorpdfstring{base\_high}{base\_high}}
+{\footnotesize\ttfamily uint16\+\_\+t idt\+\_\+entry\+::base\+\_\+high}
+
+attributes \mbox{\Hypertarget{structidt__entry_a6815d884869cb156401614bcfa344bea}\label{structidt__entry_a6815d884869cb156401614bcfa344bea}} 
+\index{idt\_entry@{idt\_entry}!flags@{flags}}
+\index{flags@{flags}!idt\_entry@{idt\_entry}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily uint8\+\_\+t idt\+\_\+entry\+::flags}
+
+this stays zero; unused \mbox{\Hypertarget{structidt__entry_a355ab480c740ae4515b90476511a1c5e}\label{structidt__entry_a355ab480c740ae4515b90476511a1c5e}} 
+\index{idt\_entry@{idt\_entry}!sselect@{sselect}}
+\index{sselect@{sselect}!idt\_entry@{idt\_entry}}
+\doxysubsubsection{\texorpdfstring{sselect}{sselect}}
+{\footnotesize\ttfamily uint16\+\_\+t idt\+\_\+entry\+::sselect}
+
+offset bits 0..15 \mbox{\Hypertarget{structidt__entry_a972966fe18097de8c7462e083f534703}\label{structidt__entry_a972966fe18097de8c7462e083f534703}} 
+\index{idt\_entry@{idt\_entry}!zero@{zero}}
+\index{zero@{zero}!idt\_entry@{idt\_entry}}
+\doxysubsubsection{\texorpdfstring{zero}{zero}}
+{\footnotesize\ttfamily uint8\+\_\+t idt\+\_\+entry\+::zero}
+
+stack selector in gdt or ldt 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/alett84/\+Pids/kernel/core-\/c.\+c\end{DoxyCompactItemize}

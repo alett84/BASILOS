@@ -1,0 +1,96 @@
+\hypertarget{rtc_8h}{}\doxysection{/home/alett84/\+Pids/include/rtc.h File Reference}
+\label{rtc_8h}\index{/home/alett84/Pids/include/rtc.h@{/home/alett84/Pids/include/rtc.h}}
+
+
+Functions for interfacing with the RTC.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for rtc.\+h\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrtc__time__t}{rtc\+\_\+time\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{rtc_8h_aa30143b2ecd3d4c70351865768f82c00}{get\+\_\+rtc}} (\mbox{\hyperlink{structrtc__time__t}{rtc\+\_\+time\+\_\+t}} $\ast$t)
+\item 
+void \mbox{\hyperlink{rtc_8h_aedffe2b9a109b8582d40be7c8e621992}{set\+\_\+rtc}} (uint8\+\_\+t day, uint8\+\_\+t month, uint8\+\_\+t year, uint8\+\_\+t hour, uint8\+\_\+t minute, uint8\+\_\+t second)
+\item 
+int \mbox{\hyperlink{rtc_8h_a3ee3669ee83fc0145d682fbb9c56b13b}{is\+\_\+leap\+\_\+year}} (uint8\+\_\+t year)
+\item 
+int \mbox{\hyperlink{rtc_8h_a778bbd58adaa0343c261f3d0163a367c}{month\+\_\+length}} (uint8\+\_\+t month, uint8\+\_\+t year)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for interfacing with the RTC. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rtc_8h_aa30143b2ecd3d4c70351865768f82c00}\label{rtc_8h_aa30143b2ecd3d4c70351865768f82c00}} 
+\index{rtc.h@{rtc.h}!get\_rtc@{get\_rtc}}
+\index{get\_rtc@{get\_rtc}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{get\_rtc()}{get\_rtc()}}
+{\footnotesize\ttfamily void get\+\_\+rtc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtc__time__t}{rtc\+\_\+time\+\_\+t}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+Gets the current time. 
+\begin{DoxyParams}{Parameters}
+{\em t} & rtc\+\_\+time struct to store time data into \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{rtc_8h_a3ee3669ee83fc0145d682fbb9c56b13b}\label{rtc_8h_a3ee3669ee83fc0145d682fbb9c56b13b}} 
+\index{rtc.h@{rtc.h}!is\_leap\_year@{is\_leap\_year}}
+\index{is\_leap\_year@{is\_leap\_year}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{is\_leap\_year()}{is\_leap\_year()}}
+{\footnotesize\ttfamily int is\+\_\+leap\+\_\+year (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{year }\end{DoxyParamCaption})}
+
+Gets whether or not a calendar year is a leap year. 
+\begin{DoxyParams}{Parameters}
+{\em year} & year to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if is leap year, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rtc_8h_a778bbd58adaa0343c261f3d0163a367c}\label{rtc_8h_a778bbd58adaa0343c261f3d0163a367c}} 
+\index{rtc.h@{rtc.h}!month\_length@{month\_length}}
+\index{month\_length@{month\_length}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{month\_length()}{month\_length()}}
+{\footnotesize\ttfamily int month\+\_\+length (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{month,  }\item[{uint8\+\_\+t}]{year }\end{DoxyParamCaption})}
+
+Gets the length in days of a month, taking into account leap years. 
+\begin{DoxyParams}{Parameters}
+{\em month} & month to evaluate \\
+\hline
+{\em year} & year of said month, for purposes of leap years. Doesn\textquotesingle{}t matter if month is February. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of month in days 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rtc_8h_aedffe2b9a109b8582d40be7c8e621992}\label{rtc_8h_aedffe2b9a109b8582d40be7c8e621992}} 
+\index{rtc.h@{rtc.h}!set\_rtc@{set\_rtc}}
+\index{set\_rtc@{set\_rtc}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{set\_rtc()}{set\_rtc()}}
+{\footnotesize\ttfamily void set\+\_\+rtc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{day,  }\item[{uint8\+\_\+t}]{month,  }\item[{uint8\+\_\+t}]{year,  }\item[{uint8\+\_\+t}]{hour,  }\item[{uint8\+\_\+t}]{minute,  }\item[{uint8\+\_\+t}]{second }\end{DoxyParamCaption})}
+
+Sets the current time. 
+\begin{DoxyParams}{Parameters}
+{\em day} & current day of the month \\
+\hline
+{\em month} & current month of the year \\
+\hline
+{\em year} & current year \\
+\hline
+{\em hour} & current hour of the day, military time \\
+\hline
+{\em minute} & current minute of the hour \\
+\hline
+{\em second} & current second of the minute \\
+\hline
+\end{DoxyParams}

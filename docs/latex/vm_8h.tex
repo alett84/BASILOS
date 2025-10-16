@@ -1,0 +1,50 @@
+\hypertarget{vm_8h}{}\doxysection{/home/alett84/\+Pids/include/mpx/vm.h File Reference}
+\label{vm_8h}\index{/home/alett84/Pids/include/mpx/vm.h@{/home/alett84/Pids/include/mpx/vm.h}}
+
+
+Kernel functions for virtual memory and primitive allocation.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for vm.\+h\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{vm_8h_a800833582c1a498054f6c725ccd85385}{kmalloc}} (size\+\_\+t size, int align, void $\ast$$\ast$phys\+\_\+addr)
+\item 
+void \mbox{\hyperlink{vm_8h_a1700b78fbc2632387ff7f166ff98af3d}{vm\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kernel functions for virtual memory and primitive allocation. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vm_8h_a800833582c1a498054f6c725ccd85385}\label{vm_8h_a800833582c1a498054f6c725ccd85385}} 
+\index{vm.h@{vm.h}!kmalloc@{kmalloc}}
+\index{kmalloc@{kmalloc}!vm.h@{vm.h}}
+\doxysubsubsection{\texorpdfstring{kmalloc()}{kmalloc()}}
+{\footnotesize\ttfamily void$\ast$ kmalloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size,  }\item[{int}]{align,  }\item[{void $\ast$$\ast$}]{phys\+\_\+addr }\end{DoxyParamCaption})}
+
+Allocates memory from a primitive heap. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The size of memory to allocate \\
+\hline
+{\em align} & If non-\/zero, align the allocation to a page boundary \\
+\hline
+{\em phys\+\_\+addr} & If non-\/\+NULL, a pointer to a pointer that will hold the physical address of the new memory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly allocated memory 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vm_8h_a1700b78fbc2632387ff7f166ff98af3d}\label{vm_8h_a1700b78fbc2632387ff7f166ff98af3d}} 
+\index{vm.h@{vm.h}!vm\_init@{vm\_init}}
+\index{vm\_init@{vm\_init}!vm.h@{vm.h}}
+\doxysubsubsection{\texorpdfstring{vm\_init()}{vm\_init()}}
+{\footnotesize\ttfamily void vm\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initializes the kernel page directory and initial kernel heap area. Performs identity mapping of the kernel frames such that the virtual addresses are equivalent to the physical addresses. 

@@ -1,0 +1,8 @@
+digraph "/home/alett84/Pids/user" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_111cd2f11cffd6d6d28d89ee0389ee9e [shape=box, label="user", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_111cd2f11cffd6d6d28d89ee0389ee9e.html"];
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_111cd2f11cffd6d6d28d89ee0389ee9e->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="28", labeldistance=1.5 headhref="dir_000004_000001.html"];
+}

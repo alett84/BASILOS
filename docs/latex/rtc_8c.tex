@@ -1,0 +1,62 @@
+\hypertarget{rtc_8c}{}\doxysection{/home/alett84/\+Pids/kernel/rtc.c File Reference}
+\label{rtc_8c}\index{/home/alett84/Pids/kernel/rtc.c@{/home/alett84/Pids/kernel/rtc.c}}
+{\ttfamily \#include $<$rtc.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$mpx/io.\+h$>$}\newline
+Include dependency graph for rtc.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{rtc_8c_aacb8fc8b7efa32c2381ebd467a2ad7d3}\label{rtc_8c_aacb8fc8b7efa32c2381ebd467a2ad7d3}} 
+\#define {\bfseries CMOS\+\_\+\+ADDRESS}~0x70
+\item 
+\mbox{\Hypertarget{rtc_8c_a5554a9134430636bc1044eb72126fe32}\label{rtc_8c_a5554a9134430636bc1044eb72126fe32}} 
+\#define {\bfseries CMOS\+\_\+\+DATA}~0x71
+\item 
+\mbox{\Hypertarget{rtc_8c_a434cfa7b354de71af5ea0b5ad2f8543a}\label{rtc_8c_a434cfa7b354de71af5ea0b5ad2f8543a}} 
+\#define {\bfseries REG\+\_\+\+SECONDS}~0x00
+\item 
+\mbox{\Hypertarget{rtc_8c_af061aabc84b6596a6023eb9545fa5291}\label{rtc_8c_af061aabc84b6596a6023eb9545fa5291}} 
+\#define {\bfseries REG\+\_\+\+MINUTES}~0x02
+\item 
+\mbox{\Hypertarget{rtc_8c_aa69450b035b4a17d32966412bc68e0ed}\label{rtc_8c_aa69450b035b4a17d32966412bc68e0ed}} 
+\#define {\bfseries REG\+\_\+\+HOURS}~0x04
+\item 
+\mbox{\Hypertarget{rtc_8c_a7e3c7beed7e860a355553913719da712}\label{rtc_8c_a7e3c7beed7e860a355553913719da712}} 
+\#define {\bfseries REG\+\_\+\+DAY}~0x07
+\item 
+\mbox{\Hypertarget{rtc_8c_ab302e8a56c2192a678f0d80337a8b630}\label{rtc_8c_ab302e8a56c2192a678f0d80337a8b630}} 
+\#define {\bfseries REG\+\_\+\+MONTH}~0x08
+\item 
+\mbox{\Hypertarget{rtc_8c_ae6770211f0048f1f147e378b4ae5f8ff}\label{rtc_8c_ae6770211f0048f1f147e378b4ae5f8ff}} 
+\#define {\bfseries REG\+\_\+\+YEAR}~0x09
+\item 
+\mbox{\Hypertarget{rtc_8c_a27eb918e2fe149390936a82d115b6b5e}\label{rtc_8c_a27eb918e2fe149390936a82d115b6b5e}} 
+\#define {\bfseries REG\+\_\+\+CENTURY}~0x32
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{rtc_8c_aa30143b2ecd3d4c70351865768f82c00}\label{rtc_8c_aa30143b2ecd3d4c70351865768f82c00}} 
+void {\bfseries get\+\_\+rtc} (\mbox{\hyperlink{structrtc__time__t}{rtc\+\_\+time\+\_\+t}} $\ast$t)
+\item 
+\mbox{\Hypertarget{rtc_8c_aedffe2b9a109b8582d40be7c8e621992}\label{rtc_8c_aedffe2b9a109b8582d40be7c8e621992}} 
+void {\bfseries set\+\_\+rtc} (uint8\+\_\+t day, uint8\+\_\+t month, uint8\+\_\+t year, uint8\+\_\+t hour, uint8\+\_\+t minute, uint8\+\_\+t second)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/21
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}

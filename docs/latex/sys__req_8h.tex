@@ -1,0 +1,61 @@
+\hypertarget{sys__req_8h}{}\doxysection{/home/alett84/\+Pids/include/sys\+\_\+req.h File Reference}
+\label{sys__req_8h}\index{/home/alett84/Pids/include/sys\_req.h@{/home/alett84/Pids/include/sys\_req.h}}
+
+
+System request function and constants.  
+
+
+{\ttfamily \#include $<$mpx/device.\+h$>$}\newline
+Include dependency graph for sys\+\_\+req.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sys__req_8h_a95d66938b0cfadb27cc1368b5e04fdb3}\label{sys__req_8h_a95d66938b0cfadb27cc1368b5e04fdb3}} 
+\#define {\bfseries INVALID\+\_\+\+OPERATION}~(-\/1)
+\item 
+\mbox{\Hypertarget{sys__req_8h_a9f45976a0d1fa6f0a85a74b6efd93835}\label{sys__req_8h_a9f45976a0d1fa6f0a85a74b6efd93835}} 
+\#define {\bfseries INVALID\+\_\+\+BUFFER}~(-\/2)
+\item 
+\mbox{\Hypertarget{sys__req_8h_a2b85babe3dc4162f5551aae5d269ba60}\label{sys__req_8h_a2b85babe3dc4162f5551aae5d269ba60}} 
+\#define {\bfseries INVALID\+\_\+\+COUNT}~(-\/3)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sys__req_8h_aa48c0ba3c7a16f8d52b2f905b2ba940f}\label{sys__req_8h_aa48c0ba3c7a16f8d52b2f905b2ba940f}} 
+enum {\bfseries op\+\_\+code} \{ {\bfseries EXIT}
+, {\bfseries IDLE}
+, {\bfseries READ}
+, {\bfseries WRITE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sys__req_8h_a0826d3da32611e0fc48b5d9cbe6c6e26}{sys\+\_\+req}} (op\+\_\+code op,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System request function and constants. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sys__req_8h_a0826d3da32611e0fc48b5d9cbe6c6e26}\label{sys__req_8h_a0826d3da32611e0fc48b5d9cbe6c6e26}} 
+\index{sys\_req.h@{sys\_req.h}!sys\_req@{sys\_req}}
+\index{sys\_req@{sys\_req}!sys\_req.h@{sys\_req.h}}
+\doxysubsubsection{\texorpdfstring{sys\_req()}{sys\_req()}}
+{\footnotesize\ttfamily int sys\+\_\+req (\begin{DoxyParamCaption}\item[{op\+\_\+code}]{op,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Request an MPX kernel operation. 
+\begin{DoxyParams}{Parameters}
+{\em op\+\_\+code} & One of READ, WRITE, IDLE, or EXIT \\
+\hline
+{\em ...} & As required for READ or WRITE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Varies by operation 
+\end{DoxyReturn}

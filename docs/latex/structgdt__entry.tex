@@ -1,0 +1,56 @@
+\hypertarget{structgdt__entry}{}\doxysection{gdt\+\_\+entry Struct Reference}
+\label{structgdt__entry}\index{gdt\_entry@{gdt\_entry}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structgdt__entry_ad1cb239b48c0bfb34a017d5deb87e3ff}\label{structgdt__entry_ad1cb239b48c0bfb34a017d5deb87e3ff}} 
+uint16\+\_\+t {\bfseries limit\+\_\+low}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structgdt__entry_ade3b4a3948e6e475221de4e226f8579c}{base\+\_\+low}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structgdt__entry_ab2ccedde5c4e3d276d00e50ae0f18d03}{base\+\_\+mid}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structgdt__entry_af8f88469b3301c3e777e97b470a97413}{access}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structgdt__entry_ad5a0c461c05d35943b8937c9c7e7b307}{flags}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structgdt__entry_a96abeddea82dd23ff9e84d09230e31a2}{base\+\_\+high}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structgdt__entry_af8f88469b3301c3e777e97b470a97413}\label{structgdt__entry_af8f88469b3301c3e777e97b470a97413}} 
+\index{gdt\_entry@{gdt\_entry}!access@{access}}
+\index{access@{access}!gdt\_entry@{gdt\_entry}}
+\doxysubsubsection{\texorpdfstring{access}{access}}
+{\footnotesize\ttfamily uint8\+\_\+t gdt\+\_\+entry\+::access}
+
+bits 16-\/23 of base \mbox{\Hypertarget{structgdt__entry_a96abeddea82dd23ff9e84d09230e31a2}\label{structgdt__entry_a96abeddea82dd23ff9e84d09230e31a2}} 
+\index{gdt\_entry@{gdt\_entry}!base\_high@{base\_high}}
+\index{base\_high@{base\_high}!gdt\_entry@{gdt\_entry}}
+\doxysubsubsection{\texorpdfstring{base\_high}{base\_high}}
+{\footnotesize\ttfamily uint8\+\_\+t gdt\+\_\+entry\+::base\+\_\+high}
+
+page granularity, size \mbox{\Hypertarget{structgdt__entry_ade3b4a3948e6e475221de4e226f8579c}\label{structgdt__entry_ade3b4a3948e6e475221de4e226f8579c}} 
+\index{gdt\_entry@{gdt\_entry}!base\_low@{base\_low}}
+\index{base\_low@{base\_low}!gdt\_entry@{gdt\_entry}}
+\doxysubsubsection{\texorpdfstring{base\_low}{base\_low}}
+{\footnotesize\ttfamily uint16\+\_\+t gdt\+\_\+entry\+::base\+\_\+low}
+
+first 16 bits of limit \mbox{\Hypertarget{structgdt__entry_ab2ccedde5c4e3d276d00e50ae0f18d03}\label{structgdt__entry_ab2ccedde5c4e3d276d00e50ae0f18d03}} 
+\index{gdt\_entry@{gdt\_entry}!base\_mid@{base\_mid}}
+\index{base\_mid@{base\_mid}!gdt\_entry@{gdt\_entry}}
+\doxysubsubsection{\texorpdfstring{base\_mid}{base\_mid}}
+{\footnotesize\ttfamily uint8\+\_\+t gdt\+\_\+entry\+::base\+\_\+mid}
+
+first 16 bits of base \mbox{\Hypertarget{structgdt__entry_ad5a0c461c05d35943b8937c9c7e7b307}\label{structgdt__entry_ad5a0c461c05d35943b8937c9c7e7b307}} 
+\index{gdt\_entry@{gdt\_entry}!flags@{flags}}
+\index{flags@{flags}!gdt\_entry@{gdt\_entry}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily uint8\+\_\+t gdt\+\_\+entry\+::flags}
+
+next 8 bits; access flags 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/alett84/\+Pids/kernel/core-\/c.\+c\end{DoxyCompactItemize}

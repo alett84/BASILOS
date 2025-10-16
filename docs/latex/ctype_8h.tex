@@ -1,0 +1,72 @@
+\hypertarget{ctype_8h}{}\doxysection{/home/alett84/\+Pids/include/ctype.h File Reference}
+\label{ctype_8h}\index{/home/alett84/Pids/include/ctype.h@{/home/alett84/Pids/include/ctype.h}}
+
+
+A subset of standard C library functions.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ctype_8h_abfa0d183e035eb9705b5faec98294d0f}\label{ctype_8h_abfa0d183e035eb9705b5faec98294d0f}} 
+\#define {\bfseries WHITESPACE}~\char`\"{} \textbackslash{}n\textbackslash{}r\textbackslash{}f\textbackslash{}t\textbackslash{}v\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ctype_8h_a56be4166e4673843042a548a7f513dbc}{isspace}} (int c)
+\item 
+char \mbox{\hyperlink{ctype_8h_a207391fc2c5fa7786d5e0b9ef8ba5e80}{tolower}} (char c)
+\item 
+int \mbox{\hyperlink{ctype_8h_a3b6b2d68b45a4b14b0a60264ea9b623e}{tolower\+\_\+inplace}} (char $\ast$c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A subset of standard C library functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ctype_8h_a56be4166e4673843042a548a7f513dbc}\label{ctype_8h_a56be4166e4673843042a548a7f513dbc}} 
+\index{ctype.h@{ctype.h}!isspace@{isspace}}
+\index{isspace@{isspace}!ctype.h@{ctype.h}}
+\doxysubsubsection{\texorpdfstring{isspace()}{isspace()}}
+{\footnotesize\ttfamily int isspace (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+Determine if a character is whitespace. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if space, 0 if not space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctype_8h_a207391fc2c5fa7786d5e0b9ef8ba5e80}\label{ctype_8h_a207391fc2c5fa7786d5e0b9ef8ba5e80}} 
+\index{ctype.h@{ctype.h}!tolower@{tolower}}
+\index{tolower@{tolower}!ctype.h@{ctype.h}}
+\doxysubsubsection{\texorpdfstring{tolower()}{tolower()}}
+{\footnotesize\ttfamily char tolower (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+Convert any ASCII uppercase letters to lowercase letters. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Character to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Character as lowercase if was uppercase, otherwise unchanged 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctype_8h_a3b6b2d68b45a4b14b0a60264ea9b623e}\label{ctype_8h_a3b6b2d68b45a4b14b0a60264ea9b623e}} 
+\index{ctype.h@{ctype.h}!tolower\_inplace@{tolower\_inplace}}
+\index{tolower\_inplace@{tolower\_inplace}!ctype.h@{ctype.h}}
+\doxysubsubsection{\texorpdfstring{tolower\_inplace()}{tolower\_inplace()}}
+{\footnotesize\ttfamily int tolower\+\_\+inplace (\begin{DoxyParamCaption}\item[{char $\ast$}]{c }\end{DoxyParamCaption})}
+
+Convert any ASCII uppercase letters to lowercase letters in place. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Pointer to character to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the character was uppercase turned lowercase, 0 otherwise 
+\end{DoxyReturn}

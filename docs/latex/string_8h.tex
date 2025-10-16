@@ -1,0 +1,198 @@
+\hypertarget{string_8h}{}\doxysection{/home/alett84/\+Pids/include/string.h File Reference}
+\label{string_8h}\index{/home/alett84/Pids/include/string.h@{/home/alett84/Pids/include/string.h}}
+
+
+A subset of standard C library functions.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for string.\+h\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{string_8h_a1965eaca47dbf3f87acdafc2208f04eb}\label{string_8h_a1965eaca47dbf3f87acdafc2208f04eb}} 
+\#define {\bfseries UP}~\char`\"{}\textbackslash{}x1B\mbox{[}A\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}\label{string_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}} 
+\#define {\bfseries DOWN}~\char`\"{}\textbackslash{}x1B\mbox{[}B\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a80fb826a684cf3f0d306b22aa100ddac}\label{string_8h_a80fb826a684cf3f0d306b22aa100ddac}} 
+\#define {\bfseries RIGHT}~\char`\"{}\textbackslash{}x1B\mbox{[}C\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a437ef08681e7210d6678427030446a54}\label{string_8h_a437ef08681e7210d6678427030446a54}} 
+\#define {\bfseries LEFT}~\char`\"{}\textbackslash{}x1B\mbox{[}D\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_abbbe5949f3c1f72e439924f8cf503509}\label{string_8h_abbbe5949f3c1f72e439924f8cf503509}} 
+\#define {\bfseries DELETE}~\char`\"{}\textbackslash{}x1B\mbox{[}3$\sim$\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a17773bcc4082e2120b19db8f80889246}\label{string_8h_a17773bcc4082e2120b19db8f80889246}} 
+\#define {\bfseries TEXT\+\_\+\+CLEAR}~\char`\"{}\textbackslash{}x1B\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_ad5ffb484c291e4fe9ad9d17b58511316}\label{string_8h_ad5ffb484c291e4fe9ad9d17b58511316}} 
+\#define {\bfseries TEXT\+\_\+\+BLACK}~\char`\"{}\textbackslash{}x1B\mbox{[}30m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a555a70bc0055a01ffe22773b65592275}\label{string_8h_a555a70bc0055a01ffe22773b65592275}} 
+\#define {\bfseries TEXT\+\_\+\+RED}~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a0f72072a891489b733a5262eeda0908d}\label{string_8h_a0f72072a891489b733a5262eeda0908d}} 
+\#define {\bfseries TEXT\+\_\+\+GREEN}~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a6e7e7b1c182f7189d6ac92f610209446}\label{string_8h_a6e7e7b1c182f7189d6ac92f610209446}} 
+\#define {\bfseries TEXT\+\_\+\+YELLOW}~\char`\"{}\textbackslash{}x1B\mbox{[}33m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a6e402ca4f48eba3f31db597c712dfa67}\label{string_8h_a6e402ca4f48eba3f31db597c712dfa67}} 
+\#define {\bfseries TEXT\+\_\+\+BLUE}~\char`\"{}\textbackslash{}x1B\mbox{[}34m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a1b2bed848a70ee368631462ec01a4b3a}\label{string_8h_a1b2bed848a70ee368631462ec01a4b3a}} 
+\#define {\bfseries TEXT\+\_\+\+PURPLE}~\char`\"{}\textbackslash{}x1B\mbox{[}35m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a07402d6cbc33a05c66021319a9557e7d}\label{string_8h_a07402d6cbc33a05c66021319a9557e7d}} 
+\#define {\bfseries TEXT\+\_\+\+CYAN}~\char`\"{}\textbackslash{}x1B\mbox{[}36m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_ab092d2c9b684d6aea800b49e212a3244}\label{string_8h_ab092d2c9b684d6aea800b49e212a3244}} 
+\#define {\bfseries TEXT\+\_\+\+WHITE}~\char`\"{}\textbackslash{}x1B\mbox{[}37m\char`\"{}
+\item 
+\mbox{\Hypertarget{string_8h_a611cc9b5f655508482f3d7a9751c182a}\label{string_8h_a611cc9b5f655508482f3d7a9751c182a}} 
+\#define {\bfseries CLEAR}~\char`\"{}\textbackslash{}x1B\mbox{[}2J\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{string_8h_a758187ddeb8646e53ab14cca659f26f9}{memcpy}} (void $\ast$restrict dst, const void $\ast$restrict src, size\+\_\+t n)
+\item 
+void $\ast$ \mbox{\hyperlink{string_8h_a39f458616ba14d36a329fca2ad5b2107}{memset}} (void $\ast$address, int c, size\+\_\+t n)
+\item 
+int \mbox{\hyperlink{string_8h_a11bd144d7d44914099a3aeddf1c8567d}{strcmp}} (const char $\ast$s1, const char $\ast$s2)
+\item 
+size\+\_\+t \mbox{\hyperlink{string_8h_aa383452fe445bfae989358c9d7d96f4f}{strlen}} (const char $\ast$s)
+\item 
+char $\ast$ \mbox{\hyperlink{string_8h_a282ca433291c6e69a01d5f106c4b02ff}{strtok}} (char $\ast$restrict s1, const char $\ast$restrict s2)
+\item 
+int \mbox{\hyperlink{string_8h_a78914fe2adbdebb5cbf62584843f1be2}{strtolower}} (char $\ast$s)
+\item 
+int \mbox{\hyperlink{string_8h_a2cd652d2a70731df50d88634f19c8b49}{itoa}} (int value, char $\ast$buf, int width, int base)
+\item 
+\mbox{\Hypertarget{string_8h_a0611bc41a359d93a83eacff74014a2e8}\label{string_8h_a0611bc41a359d93a83eacff74014a2e8}} 
+int {\bfseries get\+\_\+i\+\_\+width} (int value, int base)
+\item 
+\mbox{\Hypertarget{string_8h_a66c21b02290464c8e006adc9a59dc782}\label{string_8h_a66c21b02290464c8e006adc9a59dc782}} 
+const char $\ast$ {\bfseries strchr} (const char $\ast$str, char chr)
+\item 
+\mbox{\Hypertarget{string_8h_aabf3360f96da4c570fad282fc01773dd}\label{string_8h_aabf3360f96da4c570fad282fc01773dd}} 
+const char $\ast$ {\bfseries strpbrk} (const char $\ast$str, const char $\ast$key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A subset of standard C library functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{string_8h_a2cd652d2a70731df50d88634f19c8b49}\label{string_8h_a2cd652d2a70731df50d88634f19c8b49}} 
+\index{string.h@{string.h}!itoa@{itoa}}
+\index{itoa@{itoa}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{itoa()}{itoa()}}
+{\footnotesize\ttfamily int itoa (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{char $\ast$}]{buf,  }\item[{int}]{width,  }\item[{int}]{base }\end{DoxyParamCaption})}
+
+Converts an integer to a n-\/digit wide string in base y. Is not nul-\/terminated by function 
+\begin{DoxyParams}{Parameters}
+{\em value} & integer value to convert to string \\
+\hline
+{\em buf} & buffer to store string at \\
+\hline
+{\em width} & width of output string \\
+\hline
+{\em base} & base of output string. Result will include garbage ASCII values as digits if made higher than 46 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+integer value of unprinted digits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8h_a758187ddeb8646e53ab14cca659f26f9}\label{string_8h_a758187ddeb8646e53ab14cca659f26f9}} 
+\index{string.h@{string.h}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{memcpy()}{memcpy()}}
+{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$restrict}]{dst,  }\item[{const void $\ast$restrict}]{src,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Copy a region of memory. 
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination memory region \\
+\hline
+{\em src} & The source memory region \\
+\hline
+{\em n} & The number of bytes to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the destination memory region 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8h_a39f458616ba14d36a329fca2ad5b2107}\label{string_8h_a39f458616ba14d36a329fca2ad5b2107}} 
+\index{string.h@{string.h}!memset@{memset}}
+\index{memset@{memset}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{memset()}{memset()}}
+{\footnotesize\ttfamily void$\ast$ memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{address,  }\item[{int}]{c,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+Fill a region of memory. 
+\begin{DoxyParams}{Parameters}
+{\em address} & The start of the memory region \\
+\hline
+{\em c} & The byte to fill memory with \\
+\hline
+{\em n} & The number of bytes to fill \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the filled memory region 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8h_a11bd144d7d44914099a3aeddf1c8567d}\label{string_8h_a11bd144d7d44914099a3aeddf1c8567d}} 
+\index{string.h@{string.h}!strcmp@{strcmp}}
+\index{strcmp@{strcmp}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{strcmp()}{strcmp()}}
+{\footnotesize\ttfamily int strcmp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{const char $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+Compares two strings 
+\begin{DoxyParams}{Parameters}
+{\em s1} & The first string to compare \\
+\hline
+{\em s2} & The second string to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if strings are equal, $<$0 if s1 is lexicographically before s2, $>$0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8h_aa383452fe445bfae989358c9d7d96f4f}\label{string_8h_aa383452fe445bfae989358c9d7d96f4f}} 
+\index{string.h@{string.h}!strlen@{strlen}}
+\index{strlen@{strlen}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{strlen()}{strlen()}}
+{\footnotesize\ttfamily size\+\_\+t strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Returns the length of a string. 
+\begin{DoxyParams}{Parameters}
+{\em s} & A NUL-\/terminated string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes in the string (not counting NUL terminator) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{string_8h_a282ca433291c6e69a01d5f106c4b02ff}\label{string_8h_a282ca433291c6e69a01d5f106c4b02ff}} 
+\index{string.h@{string.h}!strtok@{strtok}}
+\index{strtok@{strtok}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{strtok()}{strtok()}}
+{\footnotesize\ttfamily char$\ast$ strtok (\begin{DoxyParamCaption}\item[{char $\ast$restrict}]{s1,  }\item[{const char $\ast$restrict}]{s2 }\end{DoxyParamCaption})}
+
+Split string into tokens TODO \mbox{\Hypertarget{string_8h_a78914fe2adbdebb5cbf62584843f1be2}\label{string_8h_a78914fe2adbdebb5cbf62584843f1be2}} 
+\index{string.h@{string.h}!strtolower@{strtolower}}
+\index{strtolower@{strtolower}!string.h@{string.h}}
+\doxysubsubsection{\texorpdfstring{strtolower()}{strtolower()}}
+{\footnotesize\ttfamily int strtolower (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+Converts all ASCII uppercase characters to lowercase characters in a given string. 
+\begin{DoxyParams}{Parameters}
+{\em s} & String to convert to lowercase \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of characters converted to lowercase 
+\end{DoxyReturn}

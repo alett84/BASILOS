@@ -1,0 +1,173 @@
+\hypertarget{kernel__pcb_8c}{}\doxysection{/home/alett84/\+Pids/kernel/kernel\+\_\+pcb.c File Reference}
+\label{kernel__pcb_8c}\index{/home/alett84/Pids/kernel/kernel\_pcb.c@{/home/alett84/Pids/kernel/kernel\_pcb.c}}
+{\ttfamily \#include $<$mpx/kernel\+\_\+pcb.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for kernel\+\_\+pcb.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$ \mbox{\hyperlink{kernel__pcb_8c_a0393987b1725cd21e017abddc99d7b83}{pcb\+\_\+allocate}} (void)
+\item 
+int \mbox{\hyperlink{kernel__pcb_8c_a9bf48c09b2ba12ab23a839fd94944669}{pcb\+\_\+free}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+ptr)
+\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$ \mbox{\hyperlink{kernel__pcb_8c_a23637bf1980d6954bd3ba7c3716424a6}{pcb\+\_\+setup}} (const char $\ast$name, int class\+\_\+type, int priority)
+\item 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$ \mbox{\hyperlink{kernel__pcb_8c_ac403b96eb2a25f4bb8431f6c0c4e153e}{pcb\+\_\+find}} (const char $\ast$name)
+\item 
+void \mbox{\hyperlink{kernel__pcb_8c_a0dbdbee9624458e31b032b4dfd07d5c9}{pcb\+\_\+insert}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+ptr)
+\item 
+void \mbox{\hyperlink{kernel__pcb_8c_a1d13d42d90fe44f926e038e10476d799}{pcb\+\_\+insert\+\_\+queue\+\_\+prioritized}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+ptr, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$$\ast$pcb\+\_\+queue\+\_\+ptr)
+\item 
+void \mbox{\hyperlink{kernel__pcb_8c_afab5ab5194b8d759ca54a681f0dafce9}{pcb\+\_\+insert\+\_\+queue}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+ptr, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$$\ast$pcb\+\_\+queue\+\_\+ptr)
+\item 
+void \mbox{\hyperlink{kernel__pcb_8c_abdd15dc71853d71bdaa0a6f7fb8f53c3}{pcb\+\_\+insert\+\_\+spot}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+ptr, \mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+prev\+\_\+ptr)
+\item 
+int \mbox{\hyperlink{kernel__pcb_8c_a0d3d067fc2cc06483f4276c9017f2207}{pcb\+\_\+remove}} (\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$pcb\+\_\+ptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kernel__pcb_8c_a87a0003f2b616d6f2fc0f51da745f5e8}\label{kernel__pcb_8c_a87a0003f2b616d6f2fc0f51da745f5e8}} 
+\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$ {\bfseries pcb\+\_\+ptrs} \mbox{[}$\,$\mbox{]} = \{NULL, NULL\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/21
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kernel__pcb_8c_a0393987b1725cd21e017abddc99d7b83}\label{kernel__pcb_8c_a0393987b1725cd21e017abddc99d7b83}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_allocate@{pcb\_allocate}}
+\index{pcb\_allocate@{pcb\_allocate}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_allocate()}{pcb\_allocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}}$\ast$ pcb\+\_\+allocate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Allocates memory for a new pcb \begin{DoxyReturn}{Returns}
+the newly allocated pcb 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel__pcb_8c_ac403b96eb2a25f4bb8431f6c0c4e153e}\label{kernel__pcb_8c_ac403b96eb2a25f4bb8431f6c0c4e153e}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_find@{pcb\_find}}
+\index{pcb\_find@{pcb\_find}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_find()}{pcb\_find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}}$\ast$ pcb\+\_\+find (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Finds a pcb struct of a given name 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the pcb \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pcb with the given name, or NULL if no pcb found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel__pcb_8c_a9bf48c09b2ba12ab23a839fd94944669}\label{kernel__pcb_8c_a9bf48c09b2ba12ab23a839fd94944669}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_free@{pcb\_free}}
+\index{pcb\_free@{pcb\_free}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_free()}{pcb\_free()}}
+{\footnotesize\ttfamily int pcb\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+ptr }\end{DoxyParamCaption})}
+
+frees the memory associated with a pcb 
+\begin{DoxyParams}{Parameters}
+{\em pcb\+\_\+ptr} & pcb to free \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero on error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel__pcb_8c_a0dbdbee9624458e31b032b4dfd07d5c9}\label{kernel__pcb_8c_a0dbdbee9624458e31b032b4dfd07d5c9}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_insert@{pcb\_insert}}
+\index{pcb\_insert@{pcb\_insert}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_insert()}{pcb\_insert()}}
+{\footnotesize\ttfamily void pcb\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+ptr }\end{DoxyParamCaption})}
+
+Inserts a pcb into the appropriate queue given its state (ready or blocked) 
+\begin{DoxyParams}{Parameters}
+{\em pcb\+\_\+ptr} & pcb to insert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kernel__pcb_8c_afab5ab5194b8d759ca54a681f0dafce9}\label{kernel__pcb_8c_afab5ab5194b8d759ca54a681f0dafce9}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_insert\_queue@{pcb\_insert\_queue}}
+\index{pcb\_insert\_queue@{pcb\_insert\_queue}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_insert\_queue()}{pcb\_insert\_queue()}}
+{\footnotesize\ttfamily void pcb\+\_\+insert\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+ptr,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$$\ast$}]{pcb\+\_\+queue\+\_\+ptr }\end{DoxyParamCaption})}
+
+Inserts a pcb into a given queue at the back of it 
+\begin{DoxyParams}{Parameters}
+{\em pcb\+\_\+ptr} & pcb to insert \\
+\hline
+{\em pcb\+\_\+queue\+\_\+ptr} & pointer to the front pcb of the queue \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kernel__pcb_8c_a1d13d42d90fe44f926e038e10476d799}\label{kernel__pcb_8c_a1d13d42d90fe44f926e038e10476d799}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_insert\_queue\_prioritized@{pcb\_insert\_queue\_prioritized}}
+\index{pcb\_insert\_queue\_prioritized@{pcb\_insert\_queue\_prioritized}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_insert\_queue\_prioritized()}{pcb\_insert\_queue\_prioritized()}}
+{\footnotesize\ttfamily void pcb\+\_\+insert\+\_\+queue\+\_\+prioritized (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+ptr,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$$\ast$}]{pcb\+\_\+queue\+\_\+ptr }\end{DoxyParamCaption})}
+
+Inserts a pcb into a given priority queue at the appropriate position 
+\begin{DoxyParams}{Parameters}
+{\em pcb\+\_\+ptr} & pcb to insert \\
+\hline
+{\em pcb\+\_\+queue\+\_\+ptr} & pointer to the front pcb of the queue \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kernel__pcb_8c_abdd15dc71853d71bdaa0a6f7fb8f53c3}\label{kernel__pcb_8c_abdd15dc71853d71bdaa0a6f7fb8f53c3}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_insert\_spot@{pcb\_insert\_spot}}
+\index{pcb\_insert\_spot@{pcb\_insert\_spot}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_insert\_spot()}{pcb\_insert\_spot()}}
+{\footnotesize\ttfamily void pcb\+\_\+insert\+\_\+spot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+ptr,  }\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+prev\+\_\+ptr }\end{DoxyParamCaption})}
+
+Inserts a pcb after a given pcb that is a member of a queue 
+\begin{DoxyParams}{Parameters}
+{\em pcb\+\_\+ptr} & pcb to insert \\
+\hline
+{\em pcb\+\_\+ptr} & pcb that the given pcb is inserted after \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{kernel__pcb_8c_a0d3d067fc2cc06483f4276c9017f2207}\label{kernel__pcb_8c_a0d3d067fc2cc06483f4276c9017f2207}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_remove@{pcb\_remove}}
+\index{pcb\_remove@{pcb\_remove}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_remove()}{pcb\_remove()}}
+{\footnotesize\ttfamily int pcb\+\_\+remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb}{pcb\+\_\+t}} $\ast$}]{pcb\+\_\+ptr }\end{DoxyParamCaption})}
+
+Removes a pcb from the appropriate queue 
+\begin{DoxyParams}{Parameters}
+{\em pcb\+\_\+ptr} & pcb to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, non-\/zero on error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kernel__pcb_8c_a23637bf1980d6954bd3ba7c3716424a6}\label{kernel__pcb_8c_a23637bf1980d6954bd3ba7c3716424a6}} 
+\index{kernel\_pcb.c@{kernel\_pcb.c}!pcb\_setup@{pcb\_setup}}
+\index{pcb\_setup@{pcb\_setup}!kernel\_pcb.c@{kernel\_pcb.c}}
+\doxysubsubsection{\texorpdfstring{pcb\_setup()}{pcb\_setup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb}{pcb\+\_\+t}}$\ast$ pcb\+\_\+setup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{int}]{class\+\_\+type,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+Initializes a pcb 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the pcb \\
+\hline
+{\em class\+\_\+type} & type of the pcb (user or system) \\
+\hline
+{\em priority} & priority of the pcb (0, most priority, to 9, least priority) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the initialized pcb 
+\end{DoxyReturn}

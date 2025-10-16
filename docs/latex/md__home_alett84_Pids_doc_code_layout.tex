@@ -1,0 +1,95 @@
+This file describes the contents of the repository as it is provided to you at the beginning of the semester, with some guidance on how to direct your changes as the semester goes on.\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md6}{}\doxysection{Headers}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md6}
+Headers for C code are located in the {\ttfamily include} directory.\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md7}{}\doxysubsection{Standard Headers}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md7}
+At the top level of the {\ttfamily include} directory are headers containing declarations for the handful of provided functions based on the C standard library. These are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{ctype_8h}{ctype.\+h}}} -- Character operations
+\item {\ttfamily \mbox{\hyperlink{stdlib_8h}{stdlib.\+h}}} -- The {\ttfamily \mbox{\hyperlink{stdlib_8h_a30670a60464f77af17dfb353353d6df8}{atoi()}}} function
+\item {\ttfamily \mbox{\hyperlink{string_8h}{string.\+h}}} -- Various memory and string functions
+\end{DoxyItemize}
+
+You may want to add declarations to these files if you implement additional functions from the standard library. You should {\itshape not} remove or modify any of the existing contents of these files.\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md8}{}\doxysubsection{MPX Headers}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md8}
+MPX-\/specific headers include those that should only be directly referenced by kernel code, under the {\ttfamily include/mpx} directory, and those that may also be needed by user-\/space code. There is no reason to modify most of these headers. You will likely want to add new headers to the {\ttfamily include} (for user-\/space) and {\ttfamily include/mpx} directories as you develop your MPX. The provided files are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{processes_8h}{processes.\+h}}} -- Declarations for functions that will be loaded as processes
+\item {\ttfamily \mbox{\hyperlink{sys__req_8h}{sys\+\_\+req.\+h}}} -- The interface between user-\/space and kernel-\/space
+\item {\ttfamily \mbox{\hyperlink{device_8h_source}{mpx/device.\+h}}} -- Constants such as {\ttfamily COM1}
+\item {\ttfamily \mbox{\hyperlink{gdt_8h}{mpx/gdt.\+h}}} -- Functions for the Global Descriptor Table
+\item {\ttfamily \mbox{\hyperlink{interrupts_8h}{mpx/interrupts.\+h}}} -- Functions for dealing with interrupts
+\item {\ttfamily \mbox{\hyperlink{io_8h}{mpx/io.\+h}}} -- Macros for performing hardware I/O
+\item {\ttfamily \mbox{\hyperlink{panic_8h}{mpx/panic.\+h}}} -- The kernel panic function
+\item {\ttfamily \mbox{\hyperlink{vm_8h}{mpx/vm.\+h}}} -- Virtual memory functions
+\end{DoxyItemize}
+
+Two headers you may want to add to (but not remove or modify existing contents) are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \mbox{\hyperlink{memory_8h}{memory.\+h}}} -- The MPX-\/specific heap manager
+\item {\ttfamily \mbox{\hyperlink{serial_8h}{mpx/serial.\+h}}} -- Functions interacting with serial ports
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md9}{}\doxysection{Source Files}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md9}
+Source files are located in the {\ttfamily kernel}, {\ttfamily lib}, and {\ttfamily user} directories, according to their use.\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md10}{}\doxysubsection{Kernel Files}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md10}
+Files in the {\ttfamily kernel} directory are part of the kernel. They execute in kernel-\/mode, interact directly with hardware, and manage system resources. Provided files are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily core-\/asm.\+s} -- Required assembly routines to load the system. Should not be modified.
+\item \`{}core-\/c.c -- Required C functions to initialize the system. Should not be modified.
+\item {\ttfamily kmain.\+c} -- Contains the {\ttfamily kmain()} function that controls overall system functionality. You will need to modify this function in several modules.
+\item {\ttfamily serial.\+c} -- Contains functions for interacting with serial ports. You will need to modify this file in modules R1 and R6.
+\item {\ttfamily sys\+\_\+call\+\_\+isr.\+s} -- Contains the Interrupt Service Routine linking kernel-\/space and user-\/space. You will need to modify this in module R3.
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md11}{}\doxysubsection{Library Files}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md11}
+Files in the {\ttfamily lib} directory contain functionality that can be used by both kernel-\/space and user-\/space code. Provided files are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily core.\+c} -- Functions required to be present by the compiler along with the basic MPX heap manager. Should not be modified.
+\item {\ttfamily ctype.\+c} -- Functions declared in {\ttfamily $<$\mbox{\hyperlink{ctype_8h}{ctype.\+h}}$>$}.
+\item {\ttfamily stdlib.\+c} -- Functions declared in {\ttfamily $<$\mbox{\hyperlink{stdlib_8h}{stdlib.\+h}}$>$}.
+\item {\ttfamily string.\+c} -- Functions declared in {\ttfamily $<$\mbox{\hyperlink{string_8h}{string.\+h}}$>$}.
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md12}{}\doxysubsection{User Files}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md12}
+Files in the {\ttfamily user} directory form the MPX user-\/space. These are the Command Handler (which you must design and implement) along with its various commands, along with several processes used in testing your module implementations and the {\ttfamily \mbox{\hyperlink{sys__req_8h_a0826d3da32611e0fc48b5d9cbe6c6e26}{sys\+\_\+req()}}} function, which links user-\/space to kernel-\/space. The only provided file is\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily core.\+c} -- Contains {\ttfamily \mbox{\hyperlink{sys__req_8h_a0826d3da32611e0fc48b5d9cbe6c6e26}{sys\+\_\+req()}}} and functions for processes needed in R3 and R4. Should not be modified.
+\end{DoxyItemize}\hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md13}{}\doxysection{Build Files}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md13}
+MPX uses the POSIX standard {\ttfamily make} utility to automate compilation and linking. While in the top level directory of your repository, you can build MPX by running\+: \begin{DoxyVerb}make
+\end{DoxyVerb}
+ You can remove build artifacts and force the next build to recompile all source files by running\+: \begin{DoxyVerb}make clean
+\end{DoxyVerb}
+ The build process is controlled by several files. Several of these should not be changed\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily Makefile} -- The primary configuration file.
+\item {\ttfamily make/\+CFLAGS} -- Options passed to the compiler to ensure proper creation of a standalone 32-\/bit x86 kernel.
+\item {\ttfamily make/\+LDFLAGS} -- Options passed to the linker to ensure proper creation of a standalone 32-\/bit x86 kernel.
+\item {\ttfamily make/link.\+ld} -- A script providing additional information beyond what can be included in {\ttfamily make/\+LDFLAGS} directly necessary for proper creation of a standalone 32-\/bit x86 kernel.
+\item {\ttfamily make/deps.\+sh} -- Generates the lists of object files and dependencies (below).
+\end{DoxyItemize}
+
+Other files {\itshape will} require updating as you add and modify your own source files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily make/kernel.\+mk} -- Kernel objects and their dependencies.
+\item {\ttfamily make/lib.\+mk} -- Library objects and their dependencies.
+\item {\ttfamily make/user.\+mk} -- User objects and their dependencies.
+\end{DoxyItemize}
+
+To update these files, run\+: \begin{DoxyVerb}make deps
+\end{DoxyVerb}
+ \hypertarget{md__home_alett84_Pids_doc_code_layout_autotoc_md14}{}\doxysection{Other Files}\label{md__home_alett84_Pids_doc_code_layout_autotoc_md14}
+The remaining files are not source code or used directly in the build process. They are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily doc/} -- (Directory) Contains documentation. You will add your own documentation to this directory.
+\item {\ttfamily .github/workflows/makefile.\+yml} -\/ Contains a Git\+Hub action that attempts to compile your code whenever you push it to Git\+Hub. If it doesn\textquotesingle{}t compile on Git\+Hub, it is not likely to compile in the test environment (barring compilation failures due to network issues). This file should not be modified.
+\item {\ttfamily .gitignore} -- Instructs Git to ignore object files and your compiled kernel when considering what has changed in your repository. You may want to add lines to this file if your team\textquotesingle{}s workflow involves additional artifacts that should not be in the repository.
+\item {\ttfamily mpx.\+sh} -- A POSIX shell script that executes MPX in a QEMU virtual machine with appropriate options for serial I/O and attaching a debugger, and resetting the terminal afterward. Should not be changed. 
+\end{DoxyItemize}

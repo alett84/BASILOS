@@ -1,0 +1,60 @@
+\hypertarget{io_8h}{}\doxysection{/home/alett84/\+Pids/include/mpx/io.h File Reference}
+\label{io_8h}\index{/home/alett84/Pids/include/mpx/io.h@{/home/alett84/Pids/include/mpx/io.h}}
+
+
+Kernel macros to read and write I/O ports.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{io_8h_a0e661d36f40638a36550a534076f155b}{outb}}(port,  data)~ \+\_\+\+\_\+asm\+\_\+\+\_\+ volatile (\char`\"{}outb \%\%al, \%\%dx\char`\"{} \+:: \char`\"{}a\char`\"{} (data), \char`\"{}d\char`\"{} (port))
+\item 
+\#define \mbox{\hyperlink{io_8h_ad6488a48837d179b1833e2f48dac9665}{inb}}(port)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kernel macros to read and write I/O ports. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{io_8h_ad6488a48837d179b1833e2f48dac9665}\label{io_8h_ad6488a48837d179b1833e2f48dac9665}} 
+\index{io.h@{io.h}!inb@{inb}}
+\index{inb@{inb}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{inb}{inb}}
+{\footnotesize\ttfamily \#define inb(\begin{DoxyParamCaption}\item[{}]{port }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{      (\{                            \(\backslash\)}
+\DoxyCodeLine{      unsigned \textcolor{keywordtype}{char} r;                          \(\backslash\)}
+\DoxyCodeLine{      \_\_asm\_\_ \textcolor{keyword}{volatile} (\textcolor{stringliteral}{"{}inb \%\%dx, \%\%al"{}} : \textcolor{stringliteral}{"{}=a"{}} (r) : \textcolor{stringliteral}{"{}d"{}} (port));  \(\backslash\)}
+\DoxyCodeLine{      r;                                \(\backslash\)}
+\DoxyCodeLine{    \})}
+
+\end{DoxyCode}
+Read one byte from an I/O port 
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to read from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A byte of data read from the port 
+\end{DoxyReturn}
+\mbox{\Hypertarget{io_8h_a0e661d36f40638a36550a534076f155b}\label{io_8h_a0e661d36f40638a36550a534076f155b}} 
+\index{io.h@{io.h}!outb@{outb}}
+\index{outb@{outb}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{outb}{outb}}
+{\footnotesize\ttfamily \#define outb(\begin{DoxyParamCaption}\item[{}]{port,  }\item[{}]{data }\end{DoxyParamCaption})~ \+\_\+\+\_\+asm\+\_\+\+\_\+ volatile (\char`\"{}outb \%\%al, \%\%dx\char`\"{} \+:: \char`\"{}a\char`\"{} (data), \char`\"{}d\char`\"{} (port))}
+
+Write one byte to an I/O port 
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to write to \\
+\hline
+{\em data} & The byte to write to the port \\
+\hline
+\end{DoxyParams}

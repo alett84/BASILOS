@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['serial_2eh_61',['serial.h',['../serial_8h.html',1,'']]],
+  ['serial_5fbuffer_5fbackspace_62',['serial_buffer_backspace',['../serial_8h.html#a7232d38b24b7fde160e0498b40e267a1',1,'serial.c']]],
+  ['serial_5fbuffer_5fdelete_63',['serial_buffer_delete',['../serial_8h.html#a9df181b3c0935211c582e4f55a2031f8',1,'serial.c']]],
+  ['serial_5finit_64',['serial_init',['../serial_8h.html#a59d1db7894c07b31b520be0ae0a32896',1,'serial.c']]],
+  ['serial_5fout_65',['serial_out',['../serial_8h.html#a7e049d65b09969503d73dd367775d0f6',1,'serial.c']]],
+  ['serial_5fout_5fpost_66',['serial_out_post',['../serial_8h.html#aebb982a0a1fb3d3125934d8b52403a0c',1,'serial.c']]],
+  ['serial_5fpoll_67',['serial_poll',['../serial_8h.html#a1e9204d031fa281b2983b1e97859c179',1,'serial.c']]],
+  ['sselect_68',['sselect',['../structidt__entry.html#a355ab480c740ae4515b90476511a1c5e',1,'idt_entry']]],
+  ['stdlib_2eh_69',['stdlib.h',['../stdlib_8h.html',1,'']]],
+  ['sti_70',['sti',['../interrupts_8h.html#ac5d15f274bc9b1e96230f3d3c60fd1f8',1,'interrupts.h']]],
+  ['strcmp_71',['strcmp',['../string_8h.html#a11bd144d7d44914099a3aeddf1c8567d',1,'string.c']]],
+  ['string_2eh_72',['string.h',['../string_8h.html',1,'']]],
+  ['strlen_73',['strlen',['../string_8h.html#aa383452fe445bfae989358c9d7d96f4f',1,'string.c']]],
+  ['strtok_74',['strtok',['../string_8h.html#a282ca433291c6e69a01d5f106c4b02ff',1,'string.c']]],
+  ['strtolower_75',['strtolower',['../string_8h.html#a78914fe2adbdebb5cbf62584843f1be2',1,'string.c']]],
+  ['sys_5falloc_5fmem_76',['sys_alloc_mem',['../memory_8h.html#a7bb253c308c19ed0f00940aaf7f3f3aa',1,'core.c']]],
+  ['sys_5ffree_5fmem_77',['sys_free_mem',['../memory_8h.html#a950663d39dbb073c9dff9cf3b5d3392c',1,'core.c']]],
+  ['sys_5fidle_5fprocess_78',['sys_idle_process',['../processes_8h.html#aacd3fe93c6c875e45b891534368d4840',1,'core.c']]],
+  ['sys_5freq_79',['sys_req',['../sys__req_8h.html#a0826d3da32611e0fc48b5d9cbe6c6e26',1,'core.c']]],
+  ['sys_5freq_2eh_80',['sys_req.h',['../sys__req_8h.html',1,'']]],
+  ['sys_5fset_5fheap_5ffunctions_81',['sys_set_heap_functions',['../memory_8h.html#a462db3a1d9c70195e513b21680b6a013',1,'core.c']]]
+];

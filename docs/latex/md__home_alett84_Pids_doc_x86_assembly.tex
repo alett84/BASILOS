@@ -1,0 +1,29 @@
+For some modules, you will have to write at least some portion of your code in assembly. You should not require more than those instructions listed here.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily call $\ast$address$\ast$} ~\newline
+ Calls {\itshape address} as a function. {\itshape Address} needs to be either a label in the current assembly source file, or an identifier marked {\ttfamily extern} in the current assembly source file. The return address will automatically be pushed on to the stack.
+\item {\ttfamily cli} ~\newline
+ Disable interrupts. No further interrupts will be handled until they are reenabled with {\ttfamily sti}.
+\item {\ttfamily in $\ast$dest$\ast$, $\ast$src$\ast$} ~\newline
+ Read one, two, or four bytes from the I/O address {\itshape src}, saving it to the register {\itshape dest}. {\itshape Dest} must be one of the registers {\ttfamily AL} (read one byte), {\ttfamily AX} (two bytes), or {\ttfamily EAX} (four bytes). {\itshape Src} must be a literal value or the register {\ttfamily DX}.
+\item {\ttfamily iret} ~\newline
+ Return from an Interrupt Service Routine. The CPU will pop the return address, CS, and EFLAGS from the stack.
+\item {\ttfamily mov $\ast$dest$\ast$, $\ast$src$\ast$} ~\newline
+ Copy the value from {\itshape src}, which may be a register, memory location, or literal value, to {\itshape dest}, which may be a register or memory location.
+\item {\ttfamily out $\ast$dest$\ast$, $\ast$src$\ast$} ~\newline
+ Write one, two, or four bytes from {\itshape src} to the I/O address {\itshape dest}. {\itshape Dest} must be a literal value or the register {\ttfamily DX}. {\itshape Src} must be one of the registers {\ttfamily AL} (write one byte), {\ttfamily AX} (two bytes), or {\ttfamily EAX} (four bytes).
+\item {\ttfamily pop $\ast$dest$\ast$} ~\newline
+ Pop the bottom value of the stack into the register {\itshape dest} and increment the stack pointer by 4 bytes.
+\item {\ttfamily popa} ~\newline
+ Pop all general purpose registers from the stack and increment the stack pointer the appropriate amount.
+\item {\ttfamily push $\ast$src$\ast$} ~\newline
+ Decrement the stack pointer by 4 bytes and push the contents of the register or literal value {\itshape src} onto the stack.
+\item {\ttfamily pusha} ~\newline
+ Push all the general purpose registers from the stack and decrement the stack pointer by the appropriate amount.
+\item {\ttfamily ret} ~\newline
+ Return from an ordinary (non-\/\+ISR) function. The CPU will pop the return address from the stack.
+\item {\ttfamily sti} ~\newline
+ Enable interrupts. 
+\end{DoxyItemize}

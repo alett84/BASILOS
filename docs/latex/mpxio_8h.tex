@@ -1,0 +1,72 @@
+\hypertarget{mpxio_8h}{}\doxysection{/home/alett84/\+Pids/include/mpx/mpxio.h File Reference}
+\label{mpxio_8h}\index{/home/alett84/Pids/include/mpx/mpxio.h@{/home/alett84/Pids/include/mpx/mpxio.h}}
+
+
+Functions to read and write to the command line interface.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mpxio_8h_a85d50a09cb925cd08d803c5a8fd01da7}{print}} (const char $\ast$str)
+\item 
+void \mbox{\hyperlink{mpxio_8h_a30bfb5f3bbd342e7a99efa21a172b458}{printf}} (const char $\ast$str,...)
+\item 
+int \mbox{\hyperlink{mpxio_8h_a5ee63b8358b29cb0097763d9b31978de}{input}} (char $\ast$$\ast$toks, int token\+\_\+size, char $\ast$buf, int buffer\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to read and write to the command line interface. 
+
+Contains user-\/oriented interactions with PCBs.
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mpxio_8h_a5ee63b8358b29cb0097763d9b31978de}\label{mpxio_8h_a5ee63b8358b29cb0097763d9b31978de}} 
+\index{mpxio.h@{mpxio.h}!input@{input}}
+\index{input@{input}!mpxio.h@{mpxio.h}}
+\doxysubsubsection{\texorpdfstring{input()}{input()}}
+{\footnotesize\ttfamily int input (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{toks,  }\item[{int}]{token\+\_\+size,  }\item[{char $\ast$}]{buf,  }\item[{int}]{buffer\+\_\+size }\end{DoxyParamCaption})}
+
+Reads user input from the console, splitting the input into tokens for command processing. 
+\begin{DoxyParams}{Parameters}
+{\em toks} & string array to store tokens into \\
+\hline
+{\em token\+\_\+size} & length of toks array \\
+\hline
+{\em buf} & buffer to store user input, will be tokenized \\
+\hline
+{\em buffer\+\_\+size} & length of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of tokens (or -\/1 on failed read) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mpxio_8h_a85d50a09cb925cd08d803c5a8fd01da7}\label{mpxio_8h_a85d50a09cb925cd08d803c5a8fd01da7}} 
+\index{mpxio.h@{mpxio.h}!print@{print}}
+\index{print@{print}!mpxio.h@{mpxio.h}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Prints a NUL-\/terminated string to the display console. 
+\begin{DoxyParams}{Parameters}
+{\em str} & string to print \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mpxio_8h_a30bfb5f3bbd342e7a99efa21a172b458}\label{mpxio_8h_a30bfb5f3bbd342e7a99efa21a172b458}} 
+\index{mpxio.h@{mpxio.h}!printf@{printf}}
+\index{printf@{printf}!mpxio.h@{mpxio.h}}
+\doxysubsubsection{\texorpdfstring{printf()}{printf()}}
+{\footnotesize\ttfamily void printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Prints a formatted NUL-\/terminated string to the display console. Format fields can be specified by a \% sign, and include\+:
+\begin{DoxyItemize}
+\item \%\% -\/ escape for a normal \% sign
+\item s -\/ a string
+\item d -\/ an integer in base-\/10. Can include a digit count (e.\+g. \%02d) 
+\begin{DoxyParams}{Parameters}
+{\em ...} & stuff to put into format fields, in the order the format fields appear in the string \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
