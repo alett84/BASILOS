@@ -1,40 +1,127 @@
-**MPX Operating System Kernel (x86)**
-A modular. educational 32-bit x86 microkernel built from scratch as a project for my _Operating Systems Structure_ course. 
-This project demonstrates protected-mode kernel design, interupt handling, memory managment, process scheduling, and serial I/O, all implemented in C and Assembly. 
+BasilOS 6.0
+Educational Microkernel Operating System
+BasilOS is a custom, command-line operating system developed as part of my operating systems structure course. 
+It demonstrates practical knowledge of process control, memory management, real-time clock integration, and serial I/O — written in C and organized into modular subsystems.
+Project Overview
+BasilOS was built from the ground up to simulate core operating system behavior within a controlled, educational environment.
+It supports:
+- Creation and management of user and system processes
+- Dynamic heap allocation using Memory Control Blocks (MCBs)
+- Time and date management through a Real-Time Clock (RTC)
+- Serial communication and interrupt handling
+- A shell environment for direct user interaction
+The goal was to understand and implement how real operating systems schedule processes, allocate memory, and interact with hardware at a low level.
+Key Features
+Command-Line Shell
+An interactive terminal where users can issue commands such as:
+- help, clear, shutdown, and version
+- date get/set and time get/set
+- pcb commands to create, delete, suspend, resume, and inspect processes
+- mcb commands to allocate or free memory
+- alarm commands to set timed process messages
+Each command is parsed, validated, and executed through the command handler (comhand) process.
 
-**Overview**
-The MPX kernel runs in protected mode and provides a foundation for multitasking and user interaction through a command-line interface(CLI). Each major subsystem including interrupts, process control, memory managment, and I/O is modular and interconnected via system calls. 
-
-**Key Subsystems**
-- Boot and Core Setup: Initializes the GDT, IDT, PIC and paging.
-- Heap Managment: Implements a first-fit allocator using Memory Control Blocks(MCB's).
-- Process Control: Supports PCB creation, ready/blocked queues, and context switching.
-- System Calls: Managed via software interrupt(int 0x60) handlers for READ, WRITE, LOCK, UNLOCK, and process control.
-- Serial I/O Driver: Full UART communication using interrupt-driven ring buffers.
-- CLI(comhand): Interactive shell with commands for PCBs, memory, RTC and alarms. 
-
-**Features**
-**Kernel Core** 
--Protected-mode initialization (core-c.c, core-asm.s) sets up GDT, IDT, PIC and virtual memory paging. 
--Panic and diagnostic logging via kpanic() and serial output. 
-
-**Memory Managment**
--Custom heap allocator implemented via Memory Control Blocks (MCBs). 
-  -Functions: initialize_heap(), allocate_memory(), free_memory(), and mcb_split(). 
--System memory wrappers (sys_alloc_mem, sys_free_mem) and user-replaceable heap functions. 
-
-**Process Control**
--Full Process Control Block (PCB) subsystem: allocation, insertion, priority, and queue managment. 
--Scheduler supports ready, blocked, and running queues 
--Context switching implemented through sys_call() interrupt handler. 
-
-**Device and I/O**
--Serial Communication: UART driver for COM1-COM4 with interrupt-driven I/O. 
--Device Control Blocks (DCB's): Manage async reads/writes and locking for devices. 
--RTC Driver: Direct CMOS access for date/time control with leap year support. 
-
-**Command Line Interface**
--Command handler (comhand) provides modular commands: 
-  -cmd
+Process Management
+Implements a full Process Control Block (PCB) system supporting ready, running, and blocked states.
+Each process stores:
+- Name, class type, suspension state, and priority (0–9)
+- Execution stack and stack pointer
+- Links to the next and previous PCBs for scheduling
+Processes can be suspended, resumed, deleted, or prioritized dynamically at runtime.
+Queue operations maintain correct scheduling order and CPU hand-off behavior.
+Memory Management
+Our custom heap allocator uses Memory Control Blocks (MCBs) to handle memory allocation and release.
+Features include:
+- First-fit allocation algorithm
+- Automatic block merging to reduce fragmentation
+- Console commands to display all, free, or allocated memory blocks
+This system closely models how a real OS manages dynamic memory.
+Real-Time Clock and Alarms
+Integrated support for hardware-level RTC interaction:
+- date get/set and time get/set commands read/write RTC registers
+- alarm command schedules time-based process creation with custom messages
 
 
+Each alarm runs as a separate process, showing how timed events can be linked to the scheduler.
+Serial I/O and Interrupts
+Supports UART-based serial communication and interrupt-driven input/output.
+ Includes:
+- Initialization and configuration of COM ports
+- Interrupt Service Routines (ISRs) for serial input/output
+- Error handling for invalid devices and busy states
+This module demonstrates how user input and device data are managed asynchronously.
+System Structure
+Module
+Purpose
+comhand.c
+Command interpreter for user input
+pcb.c / pcb.h
+Process scheduling and queue management
+mcb.c / mcb.h
+Memory allocation and deallocation
+rtc.c / rtc.h
+Real-Time Clock read/write functions
+serial.c / serial.h
+UART configuration and I/O routines
+alarm.c / alarm.h
+Time-based process execution
+sys_call.c / sys_call_isr.s
+Context switching and interrupt handling
+
+Example Command Usage
+Command
+Description
+help
+Displays available commands
+pcb showall
+Lists all system and user processes
+mcb showallocated
+Shows all allocated memory blocks
+time set 13 45 00
+Sets the system clock to 1:45 PM
+alarm 17:00:00 "System Check Complete"
+Creates an alarm that triggers at 5:00 PM
+
+
+Development Details
+Language: C
+Environment: Visual Studio / GCC toolchain
+Target Architecture: x86
+Operating Systems Tested: Linux Mint and Windows (via serial emulation)
+
+
+My Role and Contributions
+- Designed and implemented command handler logic (comhand)
+- Integrated the real-time clock and time/date command modules
+- Wrote and formatted the User’s Manual and Programmer’s Manual
+- Helped debug PCB and MCB subsystems to ensure stable process scheduling
+- Worked collaboratively with a small team to merge features into a single bootable OS build
+
+
+Learning Outcomes
+Developing BasilOS provided hands-on experience with:
+- Low-level C programming and memory management
+- Process scheduling and context switching
+- Device communication through interrupts
+- System-level debugging and modular code organization
+The project strengthened my understanding of how modern operating systems work at the kernel level.
+Documentation
+User’s Manual (v6.0): Command reference and examples
+Programmer’s Manual (v6.0): Full list of functions, data structures, and algorithms
+
+
+How to Run
+# Clone the repository
+git clone https://github.com/<your-username>/BasilOS.git
+cd BasilOS
+
+# Compile
+make
+
+# Launch
+./BasilOS
+
+Use help in the terminal to view available commands.
+Summary
+BasilOS 6.0 is a compact, functional operating system built entirely in C to demonstrate foundational OS concepts.
+It combines process scheduling, memory management, and hardware-level I/O into a cohesive learning project that reflects real-world system design principles.
