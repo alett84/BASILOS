@@ -1,5 +1,5 @@
 **BasilOS 6.0**
-#Educational Microkernel Operating System
+# Educational Microkernel Operating System
 BasilOS is a custom, command-line operating system developed as part of my operating systems structure course. 
 It demonstrates practical knowledge of process control, memory management, real-time clock integration, and serial I/O — written in C and organized into modular subsystems.
 #**Project Overview**
