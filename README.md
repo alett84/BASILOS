@@ -1,8 +1,8 @@
-**BasilOS 6.0**
+# BasilOS 6.0
 # Educational Microkernel Operating System
 BasilOS is a custom, command-line operating system developed as part of my operating systems structure course. 
 It demonstrates practical knowledge of process control, memory management, real-time clock integration, and serial I/O — written in C and organized into modular subsystems.
-#**Project Overview**
+# Project Overview
 BasilOS was built from the ground up to simulate core operating system behavior within a controlled, educational environment.
 **It supports:**
 - Creation and management of user and system processes
@@ -12,7 +12,7 @@ BasilOS was built from the ground up to simulate core operating system behavior 
 - A shell environment for direct user interaction
 The goal was to understand and implement how real operating systems schedule processes, allocate memory, and interact with hardware at a low level.
 
-#**Key Features**
+# Key Features 
 **Command-Line Shell**
 An interactive terminal where users can issue commands such as:
 - help, clear, shutdown, and version
@@ -53,14 +53,14 @@ Supports UART-based serial communication and interrupt-driven input/output.
 - Error handling for invalid devices and busy states
 This module demonstrates how user input and device data are managed asynchronously.
 
-#**Development Details**
+# Development Details
 Language: C
 Environment: Visual Studio / GCC toolchain
 Target Architecture: x86
 Operating Systems Tested: Linux Mint and Windows (via serial emulation)
 
 
-#**My Role and Contributions**
+# My Role and Contributions
 - Designed and implemented command handler logic (comhand)
 - Integrated the real-time clock and time/date command modules
 - Wrote and formatted the User’s Manual and Programmer’s Manual
@@ -68,7 +68,7 @@ Operating Systems Tested: Linux Mint and Windows (via serial emulation)
 - Worked collaboratively with a small team to merge features into a single bootable OS build
 
 
-#**Learning Outcomes**
+# Learning Outcomes
 Developing BasilOS provided hands-on experience with:
 - Low-level C programming and memory management
 - Process scheduling and context switching
@@ -76,7 +76,7 @@ Developing BasilOS provided hands-on experience with:
 - System-level debugging and modular code organization
 The project strengthened my understanding of how modern operating systems work at the kernel level.
 
-#**Documentation**
+# Documentation 
 User’s Manual (v6.0): Command reference and examples
 Programmer’s Manual (v6.0): Full list of functions, data structures, and algorithms
 
