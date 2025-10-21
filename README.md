@@ -84,18 +84,19 @@ Programmer’s Manual (v6.0): Full list of functions, data structures, and algor
 
 
 
-How to Run
-# Clone the repository
+# How to Run
+
+**Clone the repository**
 git clone https://github.com/<your-username>/BasilOS.git
 cd BasilOS
 
-# Compile
+**Compile**
 make
 
-# Launch
+**Launch**
 ./BasilOS
 
 Use help in the terminal to view available commands.
-Summary
+# Summary
 BasilOS 6.0 is a compact, functional operating system built entirely in C to demonstrate foundational OS concepts.
 It combines process scheduling, memory management, and hardware-level I/O into a cohesive learning project that reflects real-world system design principles.
