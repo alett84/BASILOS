@@ -87,7 +87,7 @@ Programmer’s Manual (v6.0): Full list of functions, data structures, and algor
 # How to Run
 
 **Clone the repository**
-git clone https://github.com/<your-username>/BasilOS.git
+git clone https://github.com/alett84/BasilOS.git
 cd BasilOS
 
 **Compile**
