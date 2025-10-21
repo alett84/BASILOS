@@ -77,7 +77,9 @@ Developing BasilOS provided hands-on experience with:
 The project strengthened my understanding of how modern operating systems work at the kernel level.
 
 # Documentation 
-User’s Manual (v6.0): Command reference and examples [Open the full report](doc/BasilOS User's Manual 6.0.pdf)
+User’s Manual (v6.0): Command reference and examples [Open the full report]([BasilOS User's Manual 6.0.pdf](https://github.com/user-attachments/files/23030901/BasilOS.User.s.Manual.6.0.pdf)
+doc/BasilOS User's Manual 6.0.pdf)
+
 Programmer’s Manual (v6.0): Full list of functions, data structures, and algorithms
 
 
